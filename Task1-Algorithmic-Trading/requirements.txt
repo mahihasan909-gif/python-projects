@@ -1,0 +1,6 @@
+# Task 1: Algorithmic Trading Adventure - Requirements
+yfinance>=0.2.18
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
