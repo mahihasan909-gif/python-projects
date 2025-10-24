@@ -1,53 +1,38 @@
-# Samsung Phone Advisor 📱🤖
+# How to Run This Project
 
-An intelligent Samsung smartphone advisory system that combines **RAG (Retrieval-Augmented Generation)** and **Multi-Agent Architecture** to provide comprehensive phone recommendations, specifications, and comparisons through natural language queries.
-
-## 🎯 Project Overview
-
-This project builds a smart assistant for a tech review platform that helps users make informed decisions when buying Samsung smartphones. Users can ask natural language questions and receive both detailed specifications and intelligent recommendations powered by AI.
-
-## ✨ Key Features
-
-### 🔄 Unified RAG + Multi-Agent System
-- **RAG Module**: Retrieves structured specifications from PostgreSQL
-- **Multi-Agent System**: 
-  - **Data Extractor Agent**: Pulls relevant phone data based on queries
-  - **Review Generator Agent**: Creates comparative analysis and recommendations
-- **FastAPI Integration**: Single endpoint for all query types
-
-### 🗃️ Data Management
-- **Web Scraper**: Collects Samsung phone data from GSMArena (20-30 models)
-- **PostgreSQL Database**: Stores comprehensive phone specifications
-- **SQLite Fallback**: Local development database option
-
-### 🧠 Intelligent Query Processing
-- Natural language understanding
-- Automatic intent detection (specs, comparison, price, camera, battery)
-- Context-aware responses
-- Confidence scoring
-
-## 🏗️ System Architecture
-
-```
-User Query → FastAPI → RAG System → Database
-                  ↓
-            Multi-Agent System
-                  ↓
-      [Data Extractor Agent] → [Review Generator Agent]
-                  ↓
-            Unified Response
+## Step 1: Navigate to Project
+```powershell
+cd "d:\Coding\Python-Projects\Task2-Samsung-Phone-Advisor"
 ```
 
-## 🚀 Getting Started
+## Step 2: Install Dependencies
+```powershell
+pip install -r requirements.txt
+```
 
-### Prerequisites
-- Python 3.8 or higher
-- PostgreSQL (optional, SQLite fallback available)
-- Internet connection for web scraping
+## Step 3: Start the API Server
+```powershell
+python api.py
+```
 
-### Installation
+## Step 4: Open Web Interface
+Open browser and go to:
+```
+http://127.0.0.1:8000/docs
+```
 
-1. **Navigate to project directory**
+## Step 5: Test the API
+1. Click **POST /ask**
+2. Click **"Try it out"**
+3. Enter JSON query:
+```json
+{
+  "question": "Compare Galaxy S23 Ultra and S22 Ultra",
+  "use_rag": false,
+  "use_multi_agent": false
+}
+```
+4. Click **"Execute"**
    ```bash
    cd Task2-Samsung-Phone-Advisor
    ```
